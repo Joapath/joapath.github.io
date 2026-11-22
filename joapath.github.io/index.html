@@ -1,0 +1,62 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <p class="hero-tag">$ whoami</p>
+  <h1>Security Researcher &amp;<br><span class="hl">Bug Bounty Hunter</span></h1>
+  <p class="hero-desc">
+    I research vulnerabilities, build offensive tools from scratch, and hunt bugs on public programs. Everything here is work I can explain line by line.
+  </p>
+  <div class="hero-cta">
+    <a href="/research" class="btn btn-accent">Research</a>
+    <a href="https://github.com/Joapath" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-heading">Tools</h2>
+  <div class="cards">
+    <a href="https://github.com/Joapath/ncx" class="card" target="_blank" rel="noopener">
+      <div class="card-name">&gt; ncx</div>
+      <p class="card-desc">
+        Netcat implementation built from scratch. Listen/connect modes, reverse shells, file transfer, remote command execution. OOP architecture.
+      </p>
+      <div class="card-tags">
+        <span class="tag">python</span>
+        <span class="tag">networking</span>
+        <span class="tag">red-team</span>
+      </div>
+    </a>
+    <a href="https://github.com/Joapath/tcp-proxy" class="card" target="_blank" rel="noopener">
+      <div class="card-name">&gt; tcp-proxy</div>
+      <p class="card-desc">
+        TCP interceptor with interactive hex/text packet editor. TLS MITM with auto-generated certificates, transparent proxy mode.
+      </p>
+      <div class="card-tags">
+        <span class="tag">python</span>
+        <span class="tag">mitm</span>
+        <span class="tag">tls</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-heading">Recent Posts</h2>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts limit:5 %}
+    <li class="post-item">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <div class="post-date">{{ post.date | date: "%Y-%m-%d" }}</div>
+      {% if post.excerpt %}
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <div class="placeholder">Write-ups and research posts coming soon.</div>
+  {% endif %}
+</section>

@@ -1,0 +1,12 @@
+title: Joapath
+description: Security Researcher · Bug Bounty Hunter
+url: "https://joapath.github.io"
+baseurl: ""
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
